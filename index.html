@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Luyện Côn 1 - Nhập Môn Côn Pháp</title>
+    <style>
+        :root {
+            --primary-color: #8b0000; /* Màu đỏ đô võ thuật */
+            --secondary-color: #f4f4f4;
+            --accent-color: #daa520; /* Màu vàng đồng */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fffaf0;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: normal;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #fff4e6;
+        }
+
+        .stt {
+            width: 10%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .loi-thieu {
+            width: 50%;
+            font-weight: 500;
+        }
+
+        .video-link {
+            width: 40%;
+            text-align: center;
+        }
+
+        a.btn-video {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        a.btn-video:hover {
+            background-color: #b8860b;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Song Luyện Côn 1</h1>
+    <h2>(Nhập môn côn pháp)</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="stt">STT</th>
+                <th class="loi-thieu">Lời Thiệu</th>
+                <th class="video-link">Video Minh Họa</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Dữ liệu sẽ được chèn bằng JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="footer">
+        © Tài liệu Nhập môn Côn pháp - Hệ thống Video dong_tac_{STT}.mp4
+    </div>
+</div>
+
+<script>
+    const danhSachLoiThieu = [
+        "Bái Tổ", "Chào", "Thủ (hét)", "Đánh", "Bổ", "Đập", "Khoáy", "Đâm", "Thọc", "Quốc",
+        "Phang", "Phất hạ", "Phất hạ", "Phất trung", "Phất trung", "Phất thượng", "Phất thượng", "Hất", "Loan thiên", "Loan địa",
+        "Đỡ thượng", "Đỡ hạ", "Gạt", "Bắt", "Khắc", "Hoành hữu", "Hoành tả", "Tạt", "Tém", "Loan thuận",
+        "Loan nghịch", "Đánh", "Bổ", "Đập", "Khoáy", "Đâm", "Thọc", "Quốc", "Phang", "Phất hạ",
+        "Phất hạ", "Phất trung", "Phất trung", "Phất thượng", "Phất thượng", "Hất", "Loan thiên", "Loan địa", "Đỡ thượng", "Đỡ hạ",
+        "Gạt", "Bắt", "Khắc", "Hoành hữu", "Hoành tả", "Tạt", "Tém", "Loan thuận", "Loan nghịch", "Bái Tổ"
+    ];
+
+    const tableBody = document.getElementById('table-body');
+
+    danhSachLoiThieu.forEach((item, index) => {
+        const stt = index + 1;
+        const fileName = `dong_tac_${stt}.mp4`;
+        
+        const row = `
+            <tr>
+                <td class="stt">${stt}</td>
+                <td class="loi-thieu">${item}</td>
+                <td class="video-link">
+                    <a href="${fileName}" class="btn-video" target="_blank">Xem Video</a>
+                </td>
+            </tr>
+        `;
+        tableBody.innerHTML += row;
+    });
+</script>
+
+</body>
+</html>
